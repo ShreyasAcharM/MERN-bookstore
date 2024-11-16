@@ -9,7 +9,14 @@ const favourite = require("./routes/favourite")
 const cart = require("./routes/cart")
 const order = require("./routes/order")
 
-app.use(cors());
+const corsOptions = {
+    origin: ['https://golden-cannoli-fa1da8.netlify.app', 'http://localhost:3000'],  // Allow both Netlify and localhost
+    methods: 'GET, POST, PUT, DELETE',  // Allow these methods for CORS requests
+    credentials: true  // If you need to send cookies or credentials
+  };
+  
+app.use(cors(corsOptions));
+
 app.use(express.json());
 
 app.use("/api/v1",user);

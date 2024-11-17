@@ -18,7 +18,7 @@ const Favourites = () => {
   return (
     <>
     {FavouriteBooks && FavouriteBooks.length === 0 && <div className="h-[100%] flex items-center justify-center text-5xl font-semibold text-zinc-500">So empty here</div>}
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid  grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {FavouriteBooks && FavouriteBooks.map((items,i) => (
         <div key={i}>
           <BookCard data={items} favourite={true}/>
